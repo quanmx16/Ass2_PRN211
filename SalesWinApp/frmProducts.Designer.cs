@@ -38,6 +38,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.gvProduct = new System.Windows.Forms.DataGridView();
+            this.btnLoadAll = new System.Windows.Forms.Button();
             this.grSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvProduct)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -81,6 +83,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(176, 27);
             this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // rdByName
             // 
@@ -147,12 +150,23 @@
             this.gvProduct.TabIndex = 3;
             this.gvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvProduct_CellClick);
             // 
+            // btnLoadAll
+            // 
+            this.btnLoadAll.Location = new System.Drawing.Point(582, 95);
+            this.btnLoadAll.Name = "btnLoadAll";
+            this.btnLoadAll.Size = new System.Drawing.Size(94, 29);
+            this.btnLoadAll.TabIndex = 4;
+            this.btnLoadAll.Text = "Load All";
+            this.btnLoadAll.UseVisualStyleBackColor = true;
+            this.btnLoadAll.Click += new System.EventHandler(this.btnLoadAll_Click);
+            // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLoadAll);
             this.Controls.Add(this.gvProduct);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnExit);
@@ -161,6 +175,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmProducts";
             this.Text = "frmProducts";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProducts_Load);
             this.grSearch.ResumeLayout(false);
             this.grSearch.PerformLayout();
@@ -182,5 +197,6 @@
         private Button btnUpdate;
         private Button btnExit;
         private DataGridView gvProduct;
+        private Button btnLoadAll;
     }
 }

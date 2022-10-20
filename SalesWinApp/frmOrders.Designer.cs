@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnViewDetail = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(637, 114);
+            this.btnExit.Location = new System.Drawing.Point(635, 108);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(94, 29);
             this.btnExit.TabIndex = 3;
@@ -80,18 +81,30 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(337, 108);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(94, 29);
+            this.btnReport.TabIndex = 4;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnViewDetail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvOrder);
             this.Name = "frmOrders";
             this.Text = "frmOrders";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvOrder)).EndInit();
             this.ResumeLayout(false);
@@ -105,5 +118,6 @@
         private Label label1;
         private Button btnViewDetail;
         private Button btnExit;
+        private Button btnReport;
     }
 }

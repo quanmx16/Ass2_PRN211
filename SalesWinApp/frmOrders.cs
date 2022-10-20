@@ -28,12 +28,15 @@ namespace SalesWinApp
                 IOrderRepository orderRepository = new OrderRepository();
                 List<OrderObject> orders = orderRepository.GetOrders();
                 gvOrder.DataSource = orders;
+                btnReport.Enabled = true ;
+                
             }
             else
             {
                 IOrderRepository orderRepository = new OrderRepository();
                 List<OrderObject> orders = orderRepository.GetOrdersByMemberId(member.MemberId);
                 gvOrder.DataSource = orders;
+                btnReport.Visible = false;
             }
             btnViewDetail.Enabled = false;
             gvOrder.ClearSelection();
@@ -67,6 +70,13 @@ namespace SalesWinApp
         private void gvOrder_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmReport frmReport = new frmReport();
+            frmReport.ShowDialog();
+
         }
     }
 }

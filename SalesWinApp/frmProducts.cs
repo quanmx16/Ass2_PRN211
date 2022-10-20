@@ -39,6 +39,7 @@ namespace SalesWinApp
             this.rdById.Checked = true;
             this.btnSearch.Enabled = false;
             this.txtSearch.Text = "";
+            btnLoadAll.Enabled = false;
         }
 
         private void gvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -71,6 +72,61 @@ namespace SalesWinApp
             frmCreateProduct.ShowDialog();
             frmProducts_Load(sender, e);
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            IProductRepository productRepository = new ProductRepository();
+
+            if (rdById.Checked)
+            {
+                try
+                {
+                    int productId = Convert.ToInt32(txtSearch.Text.Trim());
+                    List<ProductObject> validProducts = new List<ProductObject>();
+                    validProducts.Add(productRepository.GetProductById(productId));
+                    gvProduct.DataSource = validProducts;
+                    gvProduct.ClearSelection();
+
+
+
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("Id must be a number!");
+                    this.ActiveControl = txtSearch;
+                }
+            }
+            else
+            {
+                List<ProductObject> products = productRepository.GetProducts();
+                List<ProductObject> validProducts = new List<ProductObject>();
+                foreach (ProductObject product in products)
+                {
+                    if (product.ProductName.Contains(txtSearch.Text))
+                    {
+                        validProducts.Add(product);
+                    }
+                }
+                gvProduct.DataSource = validProducts;
+                gvProduct.ClearSelection();
+
+            }
+            btnLoadAll.Enabled = true;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Length > 0)
+            {
+                btnSearch.Enabled = true;
+            }
+        }
+
+        private void btnLoadAll_Click(object sender, EventArgs e)
+        {
+            frmProducts_Load(sender, e);
+            
         }
     }
 }

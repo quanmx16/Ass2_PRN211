@@ -61,3 +61,4 @@ E:\AAA-LEARNING-DOCUMENT\2022_Fall\PRN211\Code\Ass02Solution\SalesWinApp\obj\Deb
 E:\AAA-LEARNING-DOCUMENT\2022_Fall\PRN211\Code\Ass02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmOrderDetail.resources
 E:\AAA-LEARNING-DOCUMENT\2022_Fall\PRN211\Code\Ass02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmUpdateProduct.resources
 E:\AAA-LEARNING-DOCUMENT\2022_Fall\PRN211\Code\Ass02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmCreateProduct.resources
+E:\AAA-LEARNING-DOCUMENT\2022_Fall\PRN211\Code\Ass02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmReport.resources
