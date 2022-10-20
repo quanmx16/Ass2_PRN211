@@ -12,31 +12,25 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class frmUpdateMember : Form
+    public partial class frmCreateMember : Form
     {
-        MemberObject updatedMember;
-        public frmUpdateMember(MemberObject updatedMember)
+        public frmCreateMember()
         {
-            this.updatedMember = updatedMember;
             InitializeComponent();
         }
 
-        private void frmUpdateMember_Load(object sender, EventArgs e)
+        private void frmCreateMember_Load(object sender, EventArgs e)
         {
-            txtMemberId.Text = updatedMember.MemberId.ToString();
-            txtMemberId.Enabled = false;
-            txtEmail.Text = updatedMember.Email;
-            txtCompany.Text = updatedMember.CompanyName;
-            txtCountry.Text = updatedMember.Country;
-            txtCity.Text = updatedMember.City;
-            txtPassword.Text = updatedMember.Password;
-
-            this.ActiveControl = txtEmail;
             txtEmail.TabIndex = 0;
-            txtCompany.TabIndex = 1;
-            txtCity.TabIndex = 2;
-            txtCountry.TabIndex = 3;
-            txtPassword.TabIndex = 4;
+            txtPassword.TabIndex = 1;
+            txtCompany.TabIndex = 2;
+            txtCity.TabIndex = 3;
+            txtCountry.TabIndex = 4;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -46,16 +40,15 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
             if (txtEmail.Text.Length == 0 || txtPassword.Text.Length == 0 || txtCompany.Text.Length == 0 ||
-                txtCountry.Text.Length == 0 || txtCity.Text.Length == 0)
+                 txtCountry.Text.Length == 0 || txtCity.Text.Length == 0)
             {
                 MessageBox.Show("Cannot leave any field empty!");
             }
             else
             {
                 IMemberRepository memberRepository = new MemberRepository();
-                if (updatedMember.Email != txtEmail.Text && memberRepository.GetMemberByEmail(txtEmail.Text) != null)
+                if (memberRepository.GetMemberByEmail(txtEmail.Text) != null)
                 {
                     MessageBox.Show("Email has been used!");
                     this.ActiveControl = txtEmail;
@@ -63,28 +56,17 @@ namespace SalesWinApp
                 }
                 else
                 {
-                    MemberObject member = new MemberObject(Convert.ToInt32(txtMemberId.Text.ToString()),
+                    MemberObject member = new MemberObject(-1,
                                                          txtEmail.Text,
                                                          txtCompany.Text,
                                                          txtCity.Text,
                                                          txtCountry.Text,
                                                          txtPassword.Text
                                                  );
-                    memberRepository.UpdateMember(member);
+                    memberRepository.InsertMember(member);
                     this.Close();
                 }
-
             }
-
-
-
-
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

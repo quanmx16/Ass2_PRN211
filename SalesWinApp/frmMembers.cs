@@ -96,7 +96,7 @@ namespace SalesWinApp
 
             if (gvMember.SelectedCells.Count > 0)
             {
-                int  selectedRowIndex = gvMember.SelectedRows[0].Index;
+                int selectedRowIndex = gvMember.SelectedRows[0].Index;
                 DataGridViewRow selectedRow = gvMember.Rows[selectedRowIndex];
 
                 txtMemberId.Text = Convert.ToString(selectedRow.Cells["MemberId"].Value);
@@ -104,9 +104,52 @@ namespace SalesWinApp
                 txtCompany.Text = Convert.ToString(selectedRow.Cells["CompanyName"].Value);
                 txtCity.Text = Convert.ToString(selectedRow.Cells["City"].Value);
                 txtCountry.Text = Convert.ToString(selectedRow.Cells["Country"].Value);
-            
+
             }
 
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            frmCreateMember frmCreateMember = new frmCreateMember();
+            frmCreateMember.ShowDialog();
+            frmMembers_Load(sender, e);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (gvMember.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = gvMember.SelectedRows[0].Index;
+                DataGridViewRow selectedRow = gvMember.Rows[selectedRowIndex];
+
+                DialogResult result = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    int memberId = Convert.ToInt32(selectedRow.Cells["MemberId"].Value);
+                    IMemberRepository memberRepository = new MemberRepository();
+                    memberRepository.DeleteMember(memberId);
+                    frmMembers_Load(sender, e);
+
+                }
+
+
+
+
+            }
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            frmOrders frmOrders = new frmOrders(loggedInMember);
+            frmOrders.ShowDialog();
+
+        }
+
+        private void btnViewOrder_Click(object sender, EventArgs e)
+        {
+            frmOrders frmOrders = new frmOrders(loggedInMember);
+            frmOrders.ShowDialog();
         }
     }
 }

@@ -63,10 +63,9 @@ namespace DataAccess
             SqlConnection connection = GetConnection();
             connection.Open();
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "INSERT INTO Member(MemberId, Email, CompanyName, City, Country, [Password]) " +
-                "VALUES(@memberId, @email, @company, @city, @country, @password)";
+            sqlCommand.CommandText = "INSERT INTO Member(Email, CompanyName, City, Country, [Password]) " +
+                "VALUES(@email, @company, @city, @country, @password)";
 
-            sqlCommand.Parameters.AddWithValue("@memberId", member.MemberId);
             sqlCommand.Parameters.AddWithValue("@email", member.Email);
             sqlCommand.Parameters.AddWithValue("@company", member.CompanyName);
             sqlCommand.Parameters.AddWithValue("@city", member.City);

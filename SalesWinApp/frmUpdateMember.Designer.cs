@@ -32,17 +32,17 @@
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtMemberId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMemberId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCountry
@@ -72,13 +72,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(160, 27);
             this.txtEmail.TabIndex = 11;
-            // 
-            // txtMemberId
-            // 
-            this.txtMemberId.Location = new System.Drawing.Point(241, 172);
-            this.txtMemberId.Name = "txtMemberId";
-            this.txtMemberId.Size = new System.Drawing.Size(160, 27);
-            this.txtMemberId.TabIndex = 12;
             // 
             // label6
             // 
@@ -115,15 +108,6 @@
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(136, 175);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Member ID";
             // 
             // txtPassword
             // 
@@ -171,10 +155,28 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Update Member";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(136, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Member ID";
+            // 
+            // txtMemberId
+            // 
+            this.txtMemberId.Location = new System.Drawing.Point(241, 172);
+            this.txtMemberId.Name = "txtMemberId";
+            this.txtMemberId.Size = new System.Drawing.Size(160, 27);
+            this.txtMemberId.TabIndex = 12;
+            // 
             // frmUpdateMember
             // 
+            this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(823, 458);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnExit);
@@ -205,16 +207,16 @@
         private TextBox txtCity;
         private TextBox txtCompany;
         private TextBox txtEmail;
-        private TextBox txtMemberId;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
-        private Label label2;
         private TextBox txtPassword;
         private Label label1;
         private Button btnUpdate;
         private Button btnExit;
         private Label label7;
+        private Label label2;
+        private TextBox txtMemberId;
     }
 }

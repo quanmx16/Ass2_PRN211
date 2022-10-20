@@ -130,14 +130,14 @@
             // 
             this.txtCity.Location = new System.Drawing.Point(458, 70);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(160, 27);
+            this.txtCity.Size = new System.Drawing.Size(184, 27);
             this.txtCity.TabIndex = 2;
             // 
             // txtCountry
             // 
             this.txtCountry.Location = new System.Drawing.Point(458, 111);
             this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(160, 27);
+            this.txtCountry.Size = new System.Drawing.Size(184, 27);
             this.txtCountry.TabIndex = 2;
             // 
             // btnUpdate
@@ -158,6 +158,7 @@
             this.btnViewOrder.TabIndex = 3;
             this.btnViewOrder.Text = "View Order";
             this.btnViewOrder.UseVisualStyleBackColor = true;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
             // 
             // btnExit
             // 
@@ -177,6 +178,7 @@
             this.btnOrder.TabIndex = 5;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnProduct
             // 
@@ -211,6 +213,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCreate
             // 
@@ -220,6 +223,7 @@
             this.btnCreate.TabIndex = 8;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // frmMembers
             // 
