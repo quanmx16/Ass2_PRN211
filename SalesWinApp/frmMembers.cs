@@ -151,5 +151,11 @@ namespace SalesWinApp
             frmOrders frmOrders = new frmOrders(loggedInMember);
             frmOrders.ShowDialog();
         }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            frmProducts frmProducts = new frmProducts();
+            frmProducts.ShowDialog();
+        }
     }
 }

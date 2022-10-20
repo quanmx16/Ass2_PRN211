@@ -188,6 +188,7 @@
             this.btnProduct.TabIndex = 5;
             this.btnProduct.Text = "Product";
             this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // gvMember
             // 

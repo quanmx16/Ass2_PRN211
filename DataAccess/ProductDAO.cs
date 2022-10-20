@@ -73,6 +73,7 @@ namespace DataAccess
                 "WHERE ProductId = @productId";
             command.Parameters.AddWithValue("@productId", id);
             command.Connection = connection;
+            connection.Open();
             DbDataReader dbDataReader = command.ExecuteReader();
             while (dbDataReader.Read())
             {
@@ -124,14 +125,13 @@ namespace DataAccess
         {
             SqlConnection connection = GetConnection();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO Product(ProductId, ProductName, CategoryId, [Weight], UnitPrice, UnitsInStock ) " +
-                "VALUES(@productId, @productName, @categoryId, @weight, @unitPrice, @unitsInStock)";
+            command.CommandText = "INSERT INTO Product(ProductName, CategoryId, [Weight], UnitPrice, UnitsInStock ) " +
+                "VALUES(@productName, @categoryId, @weight, @unitPrice, @unitsInStock)";
             command.Parameters.AddWithValue("@productName", product.ProductName);
             command.Parameters.AddWithValue("@categoryId", product.CategoryId);
             command.Parameters.AddWithValue("@weight", product.Weight);
             command.Parameters.AddWithValue("@unitPrice", product.UnitPrice);
             command.Parameters.AddWithValue("@unitsInStock", product.UnitsInStock);
-            command.Parameters.AddWithValue("@productId", product.ProductId);
             command.Connection = connection;
             connection.Open();
             command.ExecuteNonQuery();
